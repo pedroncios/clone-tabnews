@@ -1,6 +1,6 @@
 # clone-tabnews
-curso.dev study project
 
+curso.dev study project
 
     nodejs lts/hydrogen
     next@13.1.6
