@@ -4,13 +4,17 @@
   "description": "curso.dev study project",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
+    "services:up": "npm run docker:bd:up",
+    "services:stop": "npm run docker:bd:stop",
+    "services:down": "npm run docker:bd:down",
+    "docker:bd:up": "docker compose -f infra/compose.yaml up -d",
+    "docker:bd:stop": "docker compose -f infra/compose.yaml stop",
+    "docker:bd:down": "docker compose -f infra/compose.yaml down",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "docker:bd:up": "docker compose -f infra/compose.yaml up -d",
-    "docker:bd:down": "docker compose -f infra/compose.yaml down"
+    "test:watch": "jest --watchAll"
   },
   "author": "",
   "license": "MIT",
