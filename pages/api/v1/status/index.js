@@ -1,6 +1,6 @@
 import database from "infra/database.js";
 
-async function status(request, response) {
+export default async function status(request, response) {
   const updatedAt = new Date().toISOString();
 
   // Versão do postgres, Conexões máximas e Conexões ativas
@@ -23,5 +23,3 @@ async function status(request, response) {
     },
   });
 }
-
-export default status;
